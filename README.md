@@ -9,26 +9,21 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
 
 ## STEPS TO PLAY:-
 
-#### STEP:1
-RIGHT CLICK ON MAIN.PY AND CLICK EDIT WITH IDLE.
 
-#### STEP:2
-PRESS F5 AND SIT 
+1. Right Click On Main.py And Click Edit With Idle.
 
-#### STEP:3
-NOW MAIN WINDOW OF GAME WILL OPEN.ENTER YOUR NAME IN GIVEN GREY BOX AND PRESS SUBMIT.
+2. Press F5 And Sit 
 
-#### STEP:4
-THIS WINDOW WILL SHOW YOUR GIVEN NAME ENTERED.
+3. Now Main Window Of Game Will Open.enter Your Name In Given Grey Box And Press Submit.
 
-#### STEP:5 
-NOW AFTER HITTING SUBMIT YOU WILL GEY THIS WINDOW.PRESS ANY OPTION FROM THE GIVEN.
+4. This Window Will Show Your Given Name Entered.
 
-#### STEP:6
-I’VE PRESSED PAPER,SO THE RESULT IS SHOWN BELOW,WITH SCORES.
+5. Now After Hitting Submit You Will Gey This Window.press Any Option From The Given.
 
-#### STEP:7
-NOW THIS IS WINDOW WHERE YOU WILL SEE YOUR SCORECARD.CLICK ON SOCREBOARD BUTTON BELOW SUBMIT BUTTON YOU WILL GET YOUR SCOREBOARD. 
+6. I’ve Pressed Paper,so The Result Is Shown Below,with Scores.
+
+7. Now This Is Window Where You Will See Your Scorecard.click On Socreboard Button Below Submit Button You Will Get Your Scoreboard. 
+
 HOPE YOU WILL ENJOY IT PLAYING….IF ANY ISSUES refer documentation.
 
 ## REQUIREMENTS :
