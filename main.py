@@ -1,7 +1,6 @@
 from Tkinter import *
 import tkMessageBox
 import random
-import splash122
 import sqlite3
 acc=0.0
 c=1
@@ -157,10 +156,10 @@ def score():
     Label(j,text=str(q[0][2]),bg='chartreuse2',font='Arial 15 italic').grid(row=1,column=4)
     Label(j,text=' ',bg='chartreuse2').grid(row=1,column=5)
     
-    def delet():
+    def delete():
         cur.execute("drop table rps")
         j.destroy()
-    Button(j,text='Reset',bg='black',fg='white',bd=4,command=delet).grid(row=2,column=3)
+    Button(j,text='Reset',bg='black',fg='white',bd=4,command=delete).grid(row=2,column=3)
     j.mainloop()
     #return i
     #print acc

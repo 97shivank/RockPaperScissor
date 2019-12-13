@@ -1,36 +1,42 @@
-Requirements-
-Install python 2.7
+<h1 align="center">
+  <br>
+  <a href="https://github.com/97shivank/RockPaperScissor"><img src="./rock.gif" alt="RockPaperScissor"></a>
+</h1>
 
-About game:
-Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a hand  game usually played between two people,
-in which each player simultaneously forms one of three shapes with an outstretched hand. These shapes are "rock" (a closed fist),
-"paper" (a flat hand), and "scissors" (a fist with the index finger and middle finger extended, forming a V). 
-"Scissors" is identical to the two-fingered V  sign (also indicating "victory" or "peace") except that it is pointed horizontally
-instead of being held upright in the air.
+## About Game:
 
-STEPS TO PLAY:-
+Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a hand  game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand. These shapes are "rock" (a closed fist),"paper" (a flat hand), and "scissors" (a fist with the index finger and middle finger extended, forming a V). Scissors" is identical to the two-fingered V  sign (also indicating "victory" or "peace") except that it is pointed horizontally instead of being held upright in the air.
 
-STEP:1
-RIGHT CLICK ON MAIN.PY AND CLICK EDIT WITH IDLE.
+## STEPS TO PLAY:
 
-STEP:2
-PRESS F5 AND SIT 
 
-STEP:3
-NOW MAIN WINDOW OF GAME WILL OPEN.ENTER YOUR NAME IN GIVEN GREY BOX AND PRESS SUBMIT.
+1. Right Click On Main.py And Click Edit With Idle.
 
-STEP:4
-THIS WINDOW WILL SHOW YOUR GIVEN NAME ENTERED.
+2. Press F5 And Sit 
 
-STEP:5 
-NOW AFTER HITTING SUBMIT YOU WILL GEY THIS WINDOW.PRESS ANY OPTION FROM THE GIVEN.
+3. Now Main Window Of Game Will Open.enter Your Name In Given Grey Box And Press Submit.
 
-STEP:6
-I’VE PRESSED PAPER,SO THE RESULT IS SHOWN BELOW,WITH SCORES.
+4. This Window Will Show Your Given Name Entered.
 
-STEP:7
-NOW THIS IS WINDOW WHERE YOU WILL SEE YOUR SCORECARD.CLICK ON SOCREBOARD BUTTON BELOW SUBMIT BUTTON YOU WILL GET YOUR SCOREBOARD. 
+5. Now After Hitting Submit You Will Gey This Window.press Any Option From The Given.
+
+6. I’ve Pressed Paper,so The Result Is Shown Below,with Scores.
+
+7. Now This Is Window Where You Will See Your Scorecard.click On Socreboard Button Below Submit Button You Will Get Your Scoreboard. 
+
 HOPE YOU WILL ENJOY IT PLAYING….IF ANY ISSUES refer documentation.
 
-BY
-SHIVANK SINGH
+## REQUIREMENTS :
+
+1. `Install Python 2.7`
+2. `apt-get install python-tk` 
+
+#### Steps to setup :
+
+1. `git clone https://github.com/97shivank/RockPaperScissor`
+2. `cd RockPaperScissor`
+3. `python main.py`
+
+
+### Contributing
+Any and all contributions, issues, features and tips are welcome.
