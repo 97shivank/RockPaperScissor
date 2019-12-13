@@ -20,7 +20,7 @@ n=Entry(root,font='times 20 bold',bg='light grey')
 n.grid(row=3,column=0)#your name
 user_score = 0
 comp_score = 0
-def fun():
+def fun1():
     global c1
     cur.execute("drop table rps")
     cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5),cscore varchar2(5))")
@@ -127,7 +127,11 @@ def fun():
     B1.grid(row=1,column=0,sticky=N+S+E+W)
     B2.grid(row=2,column=0,sticky=N+S+E+W)
     B3.grid(row=3,column=0,sticky=N+S+E+W)
-    
+def fun():
+    if n.get()=='':
+    	messagebox.showerror('missing input','please fill Name')
+    else:
+        fun1()    
 b4=Button(root,text="SUBMIT",bg='tomato',height='1',width='1',command=fun)
 b4.grid(row=4,column=0,sticky=N+S+E+W)
 k=str(n.get())
