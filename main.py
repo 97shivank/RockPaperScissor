@@ -1,7 +1,6 @@
-from Tkinter import *
-import tkMessageBox
+from tkinter import *
+from tkinter import messagebox
 import random
-import splash122
 import sqlite3
 acc=0.0
 c=1
@@ -21,7 +20,7 @@ n=Entry(root,font='times 20 bold',bg='light grey')
 n.grid(row=3,column=0)#your name
 user_score = 0
 comp_score = 0
-def fun():
+def fun1():
     global c1
     cur.execute("drop table rps")
     cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5),cscore varchar2(5))")
@@ -128,7 +127,11 @@ def fun():
     B1.grid(row=1,column=0,sticky=N+S+E+W)
     B2.grid(row=2,column=0,sticky=N+S+E+W)
     B3.grid(row=3,column=0,sticky=N+S+E+W)
-    
+def fun():
+    if n.get()=='':
+    	messagebox.showerror('missing input','please fill Name')
+    else:
+        fun1()    
 b4=Button(root,text="SUBMIT",bg='tomato',height='1',width='1',command=fun)
 b4.grid(row=4,column=0,sticky=N+S+E+W)
 k=str(n.get())
@@ -157,10 +160,10 @@ def score():
     Label(j,text=str(q[0][2]),bg='chartreuse2',font='Arial 15 italic').grid(row=1,column=4)
     Label(j,text=' ',bg='chartreuse2').grid(row=1,column=5)
     
-    def delet():
+    def delete():
         cur.execute("drop table rps")
         j.destroy()
-    Button(j,text='Reset',bg='black',fg='white',bd=4,command=delet).grid(row=2,column=3)
+    Button(j,text='Reset',bg='black',fg='white',bd=4,command=delete).grid(row=2,column=3)
     j.mainloop()
     #return i
     #print acc
