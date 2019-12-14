@@ -19,22 +19,22 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
 
 3. Now Main Window Of The Game Will Open. Enter Your Name In Given Gray Box And Press Submit. This Window Will Show Your Given Name Entered.
   <br>
-  <img src="./screenshots/ss3.jpg">
+  <img src="./screenshots/ss3.JPG">
   <br>
 
 4. Now After Hitting Submit You Will Get This Window. Choose any one among Rock, Paper And Scissor.
   <br>
-  <img src="./screenshots/ss4.jpg">
+  <img src="./screenshots/ss4.JPG">
   <br>
 
 5. I’ve Pressed Paper, so The Result Is Shown Below, with Scores.
   <br>
-  <img src="./screenshots/ss5.jpg">
+  <img src="./screenshots/ss5.JPG">
   <br>
 
 6. Now To See Your Scorecard, Click On Scoreboard Button Below Submit Button.
   <br>
-  <img src="./screenshots/ss6.jpg">
+  <img src="./screenshots/ss6.JPG">
   <br>
 
 HOPE YOU WILL ENJOY PLAYING IT….IF ANY ISSUES refer documentation.
