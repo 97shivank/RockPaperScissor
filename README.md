@@ -1,4 +1,4 @@
-<h1 align="center">
+﻿<h1 align="center">
   <br>
   <a href="https://github.com/97shivank/RockPaperScissor"><img src="./rock.gif" alt="RockPaperScissor"></a>
 </h1>
@@ -11,20 +11,33 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
 
 
 1. Right Click On Main.py And Click Edit With Idle.
+  <br>
+  <img src="./screenshots/ss1.jpg">
+  <br>
 
 2. Press F5 And Sit 
 
-3. Now Main Window Of Game Will Open.enter Your Name In Given Grey Box And Press Submit.
+3. Now Main Window Of The Game Will Open. Enter Your Name In Given Gray Box And Press Submit. This Window Will Show Your Given Name Entered.
+  <br>
+  <img src="./screenshots/ss3.jpg">
+  <br>
 
-4. This Window Will Show Your Given Name Entered.
+4. Now After Hitting Submit You Will Get This Window. Choose any one among Rock, Paper And Scissor.
+  <br>
+  <img src="./screenshots/ss4.jpg">
+  <br>
 
-5. Now After Hitting Submit You Will Gey This Window.press Any Option From The Given.
+5. I’ve Pressed Paper, so The Result Is Shown Below, with Scores.
+  <br>
+  <img src="./screenshots/ss5.jpg">
+  <br>
 
-6. I’ve Pressed Paper,so The Result Is Shown Below,with Scores.
+6. Now To See Your Scorecard, Click On Scoreboard Button Below Submit Button.
+  <br>
+  <img src="./screenshots/ss6.jpg">
+  <br>
 
-7. Now This Is Window Where You Will See Your Scorecard.click On Socreboard Button Below Submit Button You Will Get Your Scoreboard. 
-
-HOPE YOU WILL ENJOY IT PLAYING….IF ANY ISSUES refer documentation.
+HOPE YOU WILL ENJOY PLAYING IT….IF ANY ISSUES refer documentation.
 
 ## REQUIREMENTS :
 
