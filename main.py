@@ -12,12 +12,13 @@ cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5)
 con.commit()
 root=Tk()
 #root.geometry('600x500')
-Label(root,text='Rock Paper Scissor',relief='ridge',font='times 50 bold',bg='medium blue').grid(row=0,column=0)
+Label(root,text='Rock Paper Scissor',relief='ridge',font='times 30 bold',fg='midnight blue', bg="white",borderwidth=0,highlightthickness = 0).place(x=30,y=180)
 img=PhotoImage(file='rock.gif')
-Label(root,image=img).grid(row=1,column=0,columnspan=2)
-Label(root,text='Enter Your Name,Please',font='times 30 bold',bg='Slate Blue').grid(row=2,column=0)
-n=Entry(root,font='times 20 bold',bg='light grey')
-n.grid(row=3,column=0)#your name
+Label(root,image=img, bg="white").place(x=120,y=10)
+Label(root,text='( Ver 1.0 )',font='times 9 italic',bg='white', fg="VioletRed1").place(x=200,y=230, anchor=CENTER)
+Label(root,text='Enter Your Name Please :',font='times 10 bold',bg='white', fg="VioletRed3").place(x=80,y=270, anchor=CENTER)
+n=Entry(root,font='times 13 bold',bg='ivory',fg = "dark orange", width = 40)
+n.place(x=5,y=280, height=25)#your nam
 user_score = 0
 comp_score = 0
 def fun1():
@@ -132,8 +133,8 @@ def fun():
     	messagebox.showerror('missing input','please fill Name')
     else:
         fun1()    
-b4=Button(root,text="SUBMIT",bg='tomato',height='1',width='1',command=fun)
-b4.grid(row=4,column=0,sticky=N+S+E+W)
+b4=Button(root,text="SUBMIT",bg='misty rose',fg="blue4",height='1',width='4',command=fun)
+b4.place(x=163,y=315)
 k=str(n.get())
 cur.execute('insert into rps values(?,?,?)',(k,user_score,comp_score))
 def score():
@@ -171,9 +172,15 @@ def score():
     #e1.delete(0,END)
     con.commit()
 
-#root.destroy()
-Button(root,text='Scoreboard',bg='tomato',height='1',width='1',command=score).grid(row=5,column=0,sticky=N+S+E+W)
+Label(root,text='Made With '+ u"\u2764" + ' of Open Source',relief='ridge',font='times 13 bold',fg='red', bg="white",borderwidth=0,highlightthickness = 0).place(x=80,y=400)
 
+#root.destroy()root.title("Rock Paper Scissors")
+Button(root,text='Scoreboard',bg='tomato',fg = "blue4",height='1',width='7',command=score).place(x=150,y=350)
 
-
+## Changed Background
+root.configure(bg="white")
+## locks the window so that It does not look vague on expandng
+root.resizable(0,0)
+root.configure(height=430,width=400)
+root.title("Rock Paper Scissors")
 root.mainloop()
