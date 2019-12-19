@@ -1,6 +1,6 @@
 ﻿<h1 align="center">
   <br>
-  <a href="https://github.com/97shivank/RockPaperScissor"><img src="./rock.gif" alt="RockPaperScissor"></a>
+  <a href="https://github.com/97shivank/RockPaperScissor"><img src="./icons/logo.gif" alt="RockPaperScissor"></a>
 </h1>
 
 ## About Game:
