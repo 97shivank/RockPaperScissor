@@ -24,7 +24,7 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
 
 4. Now After Hitting Submit You Will Get This Window. Choose any one among Rock, Paper And Scissor.
   <br>
-  <img src="./screenshots/game_screen.JPG">
+  <img src="./screenshots/game_screen.png">
   <br>
 
 5. I’ve Pressed Paper, so The Result Is Shown Below in the same screen with Scores.
