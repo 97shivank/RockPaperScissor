@@ -13,7 +13,7 @@ con.commit()
 root=Tk()
 #root.geometry('600x500')
 Label(root,text='Rock Paper Scissor',relief='ridge',font='times 30 bold',fg='midnight blue', bg="white",borderwidth=0,highlightthickness = 0).place(x=30,y=180)
-img=PhotoImage(file='rock.gif')
+img=PhotoImage(file='icons/logo.gif')
 Label(root,image=img, bg="white").place(x=120,y=10)
 Label(root,text='( Ver 1.0 )',font='times 9 italic',bg='white', fg="VioletRed1").place(x=200,y=230, anchor=CENTER)
 Label(root,text='Enter Your Name Please :',font='times 10 bold',bg='white', fg="VioletRed3").place(x=80,y=270, anchor=CENTER)
@@ -22,14 +22,14 @@ n.place(x=5,y=280, height=25)#your nam
 user_score = 0
 comp_score = 0
 def fun1():
-    global c1
+    global c1, root
     cur.execute("drop table rps")
     cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5),cscore varchar2(5))")
     con.commit()
-    #root.destroy()
+    # root.destroy()
     root=Tk()
     #root.geometry('500x400')
-    Label(root,text='Hello '+n.get()+' \n Hit Your Choice!!',font='times 40 bold',bg='Slate Blue').grid(row=0,column=0)
+    Label(root,text='Hello '+n.get()+' \n Hit Your Choice!!',font='times 40 bold',bg='Slate Blue',).grid(row=0,column=0)
     def Rock():
        
             
