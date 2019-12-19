@@ -3,169 +3,79 @@ from tkinter import messagebox
 import random
 import sqlite3
 import os
+from game import playGame
+
 acc=0.0
 c=1
 c1=0
 con=sqlite3.Connection('Shivank.db')
 cur=con.cursor()
 cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5),cscore varchar2(5))")
-#cur.execute("drop table rps")
 con.commit()
 root=Tk()
-# roota
-root=Toplevel()
-#root.geometry('600x500')
 Label(root,text='Rock Paper Scissor',relief='ridge',font='times 30 bold',fg='midnight blue', bg="white",borderwidth=0,highlightthickness = 0).place(x=30,y=180)
 logo=PhotoImage(file='icons/logo.gif')
-iconRock = PhotoImage(file='icons/iconRock.png')
-iconPaper = PhotoImage(file='icons/iconPaper.png')
-iconScissors = PhotoImage(file='icons/iconScissors.png')
-outputRock = PhotoImage(file='icons/outputRock.png')
-outputPaper = PhotoImage(file='icons/outputPaper.png')
-outputScissors = PhotoImage(file='icons/outputScissors.png')
 Label(root,image=logo, bg="white").place(x=120,y=10)
 Label(root,text='( Ver 1.0 )',font='times 9 italic',bg='white', fg="VioletRed1").place(x=200,y=230, anchor=CENTER)
 Label(root,text='Enter Your Name Please :',font='times 10 bold',bg='white', fg="VioletRed3").place(x=80,y=270, anchor=CENTER)
 n=Entry(root,font='times 13 bold',bg='ivory',fg = "dark orange", width = 40)
-n.place(x=5,y=280, height=25)#your nam
+n.place(x=5,y=280, height=25)#your name
 user_score = 0
 comp_score = 0
 
-def fun1():
-    global c1, root, user_score,comp_score,logo,iconRock,iconPaper,iconScissors,outputRock,outputPaper,outputScissors
-    cur.execute("drop table rps")
-    cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5),cscore varchar2(5))")
-    con.commit()
-    # root.destroy()
-    root=Toplevel()
-    root.configure(bg="white")
-    root.geometry('800x800')
-    Label(root,text='Hello '+n.get()+' Hit Your Choice!!',font='times 20 bold',bg='white',fg="midnight blue").place(x=50, y=10)
-    userScore = Label(root,text='User : %d'%(user_score),font='times 20 bold',bg='white',fg="midnight blue").place(x=50, y=50)
-    compScore = Label(root,text='Computer : %d'%(comp_score),font='times 20 bold',bg='white',fg="midnight blue").place(x=400, y=50)
-    userSelection=Label(root,image=logo,bg="white").place(x=30,y=100)
-    compSelection=Label(root,image=logo,bg="white").place(x=400,y=100)
-
-    def Rock():
-        global user_score, comp_score,logo,iconRock,iconPaper,iconScissors,outputRock,outputPaper,outputScissors
-        comp = random.randint(1,3)
-        userSelection.configure(image=outputRock)
-        if comp == 3:
-			comp = "Scissor"
-			user_score+=1
-			compSelection.configure(image=outputScissors)
-			userScore.configure(text='User : %d'%(user_score))
-			Label(root,text="Congratulation!!, YOU WIN!!",font='times 10 bold',bg='gold').place(x=200,y=400)
-        elif comp==1: 
-			comp = "Rock"
-			compSelection.configure(image=outputRock)
-			Label(root,text="			  IT'S A TIE!!			      \n",font='times 10 bold',bg='SteelBlue1').place(x=200,y=400)			       
-        else:
-			comp = "Paper"
-			comp_score+=1
-			compSelection.configure(image=outputPaper)
-			compScore.configure(text='Computer : %d'%(comp_score))
-			Label(root,text="			     YOU LOOSE!!          \n",font='times 10 bold',bg='orange red').place(x=200,y=400)
-    
-    def paper():
-        global user_score, comp_score
-    
-        comp = random.randint(1,3)
-    	userSelection.configure(image=outputPaper)
-        if comp == 1:
-			comp = "Rock"
-			user_score+=1
-			compSelection.configure(image=outputRock)
-			userScore.configure(text='User : %d'%(user_score))
-			Label(root,text="Congratulation!!, YOU WIN!!\n",font='times 10 bold',bg='gold').place(x=200,y=400)
-        elif comp==2:
-			comp = "Paper"
-			compSelection.configure(image=outputPaper)
-			Label(root,text="          IT'S A TIE!!			         \n",font='times 10 bold',bg='SteelBlue1').place(x=200,y=400)
-        else:
-			comp = "Scissor"
-			comp_score+=1
-			compSelection.configure(image=outputScissors)
-			compScore.configure(text='Computer : %d'%(comp_score))
-			Label(root,text="			   YOU LOSE!!           \n",font='times 10 bold',bg='orange red').place(x=200,y=400)
-			
-    
-    def scissor():
-        global user_score, comp_score
-        comp = random.randint(1,3)
-        userSelection.configure(image=outputScissors)
-        if comp == 2:
-			comp = "Paper"
-			user_score+=1
-			compSelection.configure(image=outputPaper)
-			userScore.configure(text='User : %d'%(user_score))
-			Label(root,text="Congratulation!!,YOU WIN!!\n",font='times 10 bold',bg='gold').place(x=200,y=400)
-			
-			
-        elif comp==3:
-			comp = "Scissor"
-			compSelection.configure(image=outputScissors)
-			Label(root,text="       IT'S A TIE!!						\n",font='times 10 bold',bg='SteelBlue1').place(x=200,y=400)  
-           
-        
-        else:
-			comp = "Rock"
-			comp_score+=1
-			compSelection.configure(image=outputRock)
-			compScore.configure(text='Computer : %d'%(comp_score))
-			Label(root,text="         YOU LOOSE!!			    \n",font='times 10 bold',bg='orange red').place(x=200,y=400)
-			
-    B1 = Button(root, image = iconRock,bg='white',height=50,width=50, command = lambda: Rock())
-    B2 = Button(root, image = iconPaper,bg='white',height=50,width=50, command = lambda: paper())
-    B3 = Button(root, image = iconScissors,bg='white',height=50,width=50, command = lambda: scissor())
-    
-    B1.place(x=100,y=50)
-    B2.place(x=200,y=50)
-    B3.place(x=300,y=50)
+def play(userName):
+	global c1, root, user_score,comp_score,n
+	# cur.execute("drop table rps")
+	cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5),cscore varchar2(5))")
+	con.commit()
+	gameObject = playGame(userName)
+	temp_scores= gameObject.myGame()
+	return temp_scores
 
 def fun():
-    if n.get()=='':
-    	messagebox.showerror('missing input','please fill Name')
-    else:
-        fun1()    
+	global user_score,comp_score
+	if n.get()=='':
+		messagebox.showerror('missing input','please fill Name').configure(bg="white")
+	else:
+		temp_scores = play(n.get())
+		user_score += temp_scores[0]
+		comp_score += temp_scores[0]
+		print(user_score,comp_score)
+
 b4=Button(root,text="SUBMIT",bg='misty rose',fg="blue4",height='1',width='4',command=fun)
 b4.place(x=163,y=315)
 k=str(n.get())
 cur.execute('insert into rps values(?,?,?)',(k,user_score,comp_score))
 def score():
-    k=str(n.get())
-    cur.execute('insert into rps values(?,?,?)',(k,user_score,comp_score))
-    con.commit()
-    cur.execute('select * from rps')
-    q=cur.fetchall()
-    j=Tk()
-    j.title('ScoreBoard')
-    Label(j,text='Name',bg='chartreuse2',fg='black',font='Arial 20 bold').grid(row=0,column=0)
-    Label(j,text=' ',bg='chartreuse2').grid(row=0,column=1)
-    Label(j,text=' Your Score',bg='chartreuse2',fg='black',font='Arial 20 bold').grid(row=0,column=2)
-    Label(j,text=' ',bg='chartreuse2').grid(row=0,column=3)
-    Label(j,text=' Computer Score',bg='chartreuse2',fg='black',font='Arial 20 bold').grid(row=0,column=4)
-    Label(j,text=' ',bg='chartreuse2').grid(row=0,column=5)
+	k=str(n.get())
+	cur.execute('insert into rps values(?,?,?)',(k,user_score,comp_score))
+	con.commit()
+	cur.execute('select * from rps')
+	q=cur.fetchall()
+	j=Tk()
+	j.title('ScoreBoard')
+	Label(j,text='Name',bg='chartreuse2',fg='black',font='Arial 20 bold').grid(row=0,column=0)
+	Label(j,text=' ',bg='chartreuse2').grid(row=0,column=1)
+	Label(j,text=' Your Score',bg='chartreuse2',fg='black',font='Arial 20 bold').grid(row=0,column=2)
+	Label(j,text=' ',bg='chartreuse2').grid(row=0,column=3)
+	Label(j,text=' Computer Score',bg='chartreuse2',fg='black',font='Arial 20 bold').grid(row=0,column=4)
+	Label(j,text=' ',bg='chartreuse2').grid(row=0,column=5)
 
    
-    j.config(background='chartreuse2')
-    Label(j,text=str(q[0][0]),bg='chartreuse2',font='Arial 15 italic').grid(row=1,column=0)
-    Label(j,text=' ',bg='chartreuse2').grid(row=1,column=1)
-    Label(j,text=str(q[0][1]),bg='chartreuse2',font='Arial 15 italic').grid(row=1,column=2)
-    Label(j,text=' ',bg='chartreuse2').grid(row=1,column=3)
-    Label(j,text=str(q[0][2]),bg='chartreuse2',font='Arial 15 italic').grid(row=1,column=4)
-    Label(j,text=' ',bg='chartreuse2').grid(row=1,column=5)
-    
-    def delete():
-        cur.execute("drop table rps")
-        j.destroy()
-    Button(j,text='Reset',bg='black',fg='white',bd=4,command=delete).grid(row=2,column=3)
-    j.mainloop()
-    #return i
-    #print acc
-    #Label(frame,text=str(i)).grid(row=0,column=0)
-    #e1.delete(0,END)
-    con.commit()
+	j.config(background='chartreuse2')
+	Label(j,text=str(q[0][0]),bg='chartreuse2',font='Arial 15 italic').grid(row=1,column=0)
+	Label(j,text=' ',bg='chartreuse2').grid(row=1,column=1)
+	Label(j,text=str(q[0][1]),bg='chartreuse2',font='Arial 15 italic').grid(row=1,column=2)
+	Label(j,text=' ',bg='chartreuse2').grid(row=1,column=3)
+	Label(j,text=str(q[0][2]),bg='chartreuse2',font='Arial 15 italic').grid(row=1,column=4)
+	Label(j,text=' ',bg='chartreuse2').grid(row=1,column=5)
+	
+	def delete():
+		cur.execute("drop table rps")
+		j.destroy()
+	Button(j,text='Reset',bg='black',fg='white',bd=4,command=delete).grid(row=2,column=3)
+	j.mainloop()
+	con.commit()
 
 Label(root,text='Made With '+ u"\u2764" + ' of Open Source',relief='ridge',font='times 13 bold',fg='red', bg="white",borderwidth=0,highlightthickness = 0).place(x=80,y=400)
 
