@@ -40,7 +40,6 @@ def fun():
 		temp_scores = play(n.get())
 		user_score += temp_scores[0]
 		comp_score += temp_scores[0]
-		print(user_score,comp_score)
 
 b4=Button(root,text="SUBMIT",bg='misty rose',fg="blue4",height='1',width='4',command=fun)
 b4.place(x=163,y=315)
