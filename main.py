@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import random
 import sqlite3
+import os
 acc=0.0
 c=1
 c1=0
@@ -11,123 +12,117 @@ cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5)
 #cur.execute("drop table rps")
 con.commit()
 root=Tk()
+# roota
+root=Toplevel()
 #root.geometry('600x500')
 Label(root,text='Rock Paper Scissor',relief='ridge',font='times 30 bold',fg='midnight blue', bg="white",borderwidth=0,highlightthickness = 0).place(x=30,y=180)
-img=PhotoImage(file='icons/logo.gif')
-Label(root,image=img, bg="white").place(x=120,y=10)
+logo=PhotoImage(file='icons/logo.gif')
+iconRock = PhotoImage(file='icons/iconRock.png')
+iconPaper = PhotoImage(file='icons/iconPaper.png')
+iconScissors = PhotoImage(file='icons/iconScissors.png')
+outputRock = PhotoImage(file='icons/outputRock.png')
+outputPaper = PhotoImage(file='icons/outputPaper.png')
+outputScissors = PhotoImage(file='icons/outputScissors.png')
+Label(root,image=logo, bg="white").place(x=120,y=10)
 Label(root,text='( Ver 1.0 )',font='times 9 italic',bg='white', fg="VioletRed1").place(x=200,y=230, anchor=CENTER)
 Label(root,text='Enter Your Name Please :',font='times 10 bold',bg='white', fg="VioletRed3").place(x=80,y=270, anchor=CENTER)
 n=Entry(root,font='times 13 bold',bg='ivory',fg = "dark orange", width = 40)
 n.place(x=5,y=280, height=25)#your nam
 user_score = 0
 comp_score = 0
+
 def fun1():
-    global c1, root
+    global c1, root, user_score,comp_score,logo,iconRock,iconPaper,iconScissors,outputRock,outputPaper,outputScissors
     cur.execute("drop table rps")
     cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5),cscore varchar2(5))")
     con.commit()
     # root.destroy()
-    root=Tk()
-    #root.geometry('500x400')
-    Label(root,text='Hello '+n.get()+' \n Hit Your Choice!!',font='times 40 bold',bg='Slate Blue',).grid(row=0,column=0)
+    root=Toplevel()
+    root.configure(bg="white")
+    root.geometry('800x800')
+    Label(root,text='Hello '+n.get()+' Hit Your Choice!!',font='times 20 bold',bg='white',fg="midnight blue").place(x=50, y=10)
+    userScore = Label(root,text='User : %d'%(user_score),font='times 20 bold',bg='white',fg="midnight blue").place(x=50, y=50)
+    compScore = Label(root,text='Computer : %d'%(comp_score),font='times 20 bold',bg='white',fg="midnight blue").place(x=400, y=50)
+    userSelection=Label(root,image=logo,bg="white").place(x=30,y=100)
+    compSelection=Label(root,image=logo,bg="white").place(x=400,y=100)
+
     def Rock():
-       
-            
-        global user_score, comp_score
+        global user_score, comp_score,logo,iconRock,iconPaper,iconScissors,outputRock,outputPaper,outputScissors
         comp = random.randint(1,3)
-    #print("your choice: Rock")
-    #print("Comp choice: "+str(comp))
+        userSelection.configure(image=outputRock)
         if comp == 3:
-            comp = "Scissor"
-            user_score+=1
-            Label(root,text="Congratulation!!, YOU WIN!! \n"+"Your Choice:Rock"+"\nComp Choice: "+comp+"\nYour Score: "+str(user_score)+"\nComputer Score: "+str(comp_score),font='times 10 bold',bg='gold').grid(row=4,column=0)
-            
-            
+			comp = "Scissor"
+			user_score+=1
+			compSelection.configure(image=outputScissors)
+			userScore.configure(text='User : %d'%(user_score))
+			Label(root,text="Congratulation!!, YOU WIN!!",font='times 10 bold',bg='gold').place(x=200,y=400)
         elif comp==1: 
-            comp = "Rock"
-            Label(root,text="              IT'S A TIE!!                  \n"+"Your Choice:Rock"+"\nComp Choice: "+comp+"\nYour Score: "+str(user_score)+"\nComputer Score: "+str(comp_score),font='times 10 bold',bg='SteelBlue1').grid(row=4,column=0)                   
-            
+			comp = "Rock"
+			compSelection.configure(image=outputRock)
+			Label(root,text="			  IT'S A TIE!!			      \n",font='times 10 bold',bg='SteelBlue1').place(x=200,y=400)			       
         else:
-            comp = "Paper"
-            comp_score+=1
-            Label(root,text="                 YOU LOOSE!!          \n"+"Your Choice:Rock"+"\nComp Choice: "+comp+"\nYour Score: "+str(user_score)+"\nComputer Score: "+str(comp_score),font='times 10 bold',bg='orange red').grid(row=4,column=0)
-            
-        
+			comp = "Paper"
+			comp_score+=1
+			compSelection.configure(image=outputPaper)
+			compScore.configure(text='Computer : %d'%(comp_score))
+			Label(root,text="			     YOU LOOSE!!          \n",font='times 10 bold',bg='orange red').place(x=200,y=400)
     
     def paper():
-        
-           
-        
-       
         global user_score, comp_score
     
         comp = random.randint(1,3)
-    #print("your choice: paper")
-    #print("Comp choice: "+str(comp))
+    	userSelection.configure(image=outputPaper)
         if comp == 1:
-            comp = "Rock"
-            user_score+=1
-            Label(root,text="Congratulation!!, YOU WIN!!\n"+"Your Choice:Paper"+"\nComp Choice: "+comp+"\nYour Score: "+str(user_score)+"\nComputer Score: "+str(comp_score),font='times 10 bold',bg='gold').grid(row=4,column=0)
-            
-           # print acc
+			comp = "Rock"
+			user_score+=1
+			compSelection.configure(image=outputRock)
+			userScore.configure(text='User : %d'%(user_score))
+			Label(root,text="Congratulation!!, YOU WIN!!\n",font='times 10 bold',bg='gold').place(x=200,y=400)
         elif comp==2:
-            comp = "Paper"
-            Label(root,text="          IT'S A TIE!!                     \n"+"Your Choice:Paper"+"\nComp Choice: "+comp+"\nYour Score: "+str(user_score)+"\nComputer Score: "+str(comp_score),font='times 10 bold',bg='SteelBlue1').grid(row=4,column=0)
-            
-        
+			comp = "Paper"
+			compSelection.configure(image=outputPaper)
+			Label(root,text="          IT'S A TIE!!			         \n",font='times 10 bold',bg='SteelBlue1').place(x=200,y=400)
         else:
-            comp = "Scissor"
-            comp_score+=1
-            Label(root,text="               YOU LOSE!!           \n"+"Your Choice:Paper"+"\nComp Choice: "+comp+"\nYour Score: "+str(user_score)+"\nComputer Score: "+str(comp_score),font='times 10 bold',bg='orange red').grid(row=4,column=0)
-            
-        #acc=(user_score/int(c))*100.0
-    def scissor():
-        
-            
-        global user_score, comp_score
+			comp = "Scissor"
+			comp_score+=1
+			compSelection.configure(image=outputScissors)
+			compScore.configure(text='Computer : %d'%(comp_score))
+			Label(root,text="			   YOU LOSE!!           \n",font='times 10 bold',bg='orange red').place(x=200,y=400)
+			
     
+    def scissor():
+        global user_score, comp_score
         comp = random.randint(1,3)
-    #print("your choice: scissor")
-    #print("Comp choice: "+str(comp))
+        userSelection.configure(image=outputScissors)
         if comp == 2:
-            comp = "Paper"
-            user_score+=1
-            Label(root,text="Congratulation!!,YOU WIN!!\n"+"Your Choice:Scissor"+"\nComp Choice: "+comp+"\nYour Score: "+str(user_score)+"\nComputer Score: "+str(comp_score),font='times 10 bold',bg='gold').grid(row=4,column=0)
-            
-            
+			comp = "Paper"
+			user_score+=1
+			compSelection.configure(image=outputPaper)
+			userScore.configure(text='User : %d'%(user_score))
+			Label(root,text="Congratulation!!,YOU WIN!!\n",font='times 10 bold',bg='gold').place(x=200,y=400)
+			
+			
         elif comp==3:
-            comp = "Scissor"
-            Label(root,text="       IT'S A TIE!!                        \n"+"Your Choice:Scissor"+"\nComp Choice: "+comp+"\nYour Score: "+str(user_score)+"\nComputer Score: "+str(comp_score),font='times 10 bold',bg='SteelBlue1').grid(row=4,column=0)  
+			comp = "Scissor"
+			compSelection.configure(image=outputScissors)
+			Label(root,text="       IT'S A TIE!!						\n",font='times 10 bold',bg='SteelBlue1').place(x=200,y=400)  
            
         
         else:
-            comp = "Rock"
-            comp_score+=1
-            Label(root,text="         YOU LOOSE!!                \n"+"Your Choice:Scissor"+"\nComp Choice: "+comp+"\nYour Score: "+str(user_score)+"\nComputer Score: "+str(comp_score),font='times 10 bold',bg='orange red').grid(row=4,column=0)
-            
-       
-    B1 =Button(root, text = "Rock",bg='red',height="4",width="4", command = Rock)
-    #root['bg']='white'
-    #okbutton=PhotoImage(file='72.gif')
-    #B1=Button(root,image=okbutton,bg='white')
-    #B1['border']='0'
-    #B1.grid(row=1,column=0,sticky=N+S+E+W)
-    #root['bg']='white'
-    #okbutton=PhotoImage(file='papr.gif')
-    #B2=Button(root,image='okbutton',bg='white')
-    #B2['border']='0'
-    #B2.grid(row=2,column=0,sticky=N+S+E+W)
-    #root['bg']='white'
-    #okbutton=PhotoImage(file='sc.gif')
-    #B3=Button(root,image='okbutton',bg='white')
-    #B3['border']='0'
-    #B3.grid(row=3,column=0,sticky=N+S+E+W)
-    #B1 =Button(root,  image= '72.gif',bg='red',height="4",width="4", command = Rock)
-    B2 = Button(root, text = "Paper",bg='green',height="4",width="4", command = paper)
-    B3 = Button(root, text = "Scissor",bg='blue',height="4",width="4", command = scissor)
-    B1.grid(row=1,column=0,sticky=N+S+E+W)
-    B2.grid(row=2,column=0,sticky=N+S+E+W)
-    B3.grid(row=3,column=0,sticky=N+S+E+W)
+			comp = "Rock"
+			comp_score+=1
+			compSelection.configure(image=outputRock)
+			compScore.configure(text='Computer : %d'%(comp_score))
+			Label(root,text="         YOU LOOSE!!			    \n",font='times 10 bold',bg='orange red').place(x=200,y=400)
+			
+    B1 = Button(root, image = iconRock,bg='white',height=50,width=50, command = lambda: Rock())
+    B2 = Button(root, image = iconPaper,bg='white',height=50,width=50, command = lambda: paper())
+    B3 = Button(root, image = iconScissors,bg='white',height=50,width=50, command = lambda: scissor())
+    
+    B1.place(x=100,y=50)
+    B2.place(x=200,y=50)
+    B3.place(x=300,y=50)
+
 def fun():
     if n.get()=='':
     	messagebox.showerror('missing input','please fill Name')
