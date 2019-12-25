@@ -1,15 +1,15 @@
 from tkinter import *
 import time
 import random
-
+from updateScore import scoring
 
 class playGame:
 
-	def __init__(self, userName):
+	def __init__(self, userName, conn):
 		self.root = Toplevel()
 		self.user_name = userName
-		self.user_score = 0
-		self.comp_score = 0
+		self.scoreboard = scoring(conn)
+		self.user_score, self.comp_score = self.scoreboard.getScore(userName)
 		self.logo=PhotoImage(file='icons/logo.gif')
 		self.iconRock = PhotoImage(file='icons/iconRock.png')
 		self.iconPaper = PhotoImage(file='icons/iconPaper.png')
@@ -19,7 +19,11 @@ class playGame:
 		self.outputScissors = PhotoImage(file='icons/outputScissors.png')
 		self.user = PhotoImage(file='icons/user.png')
 		self.computer = PhotoImage(file='icons/computer.png')
-
+	
+	def onExit(self):
+		self.scoreboard.insertData(self.user_name,self.user_score, self.comp_score)
+		self.root.destroy()
+	
 	def myGame(self):
 		self.root.title("Let's Play !!")
 		self.root.configure(bg="white")
@@ -193,5 +197,6 @@ class playGame:
 		Label(self.root,text='Made With '+ u"\u2764" + ' of Open Source',relief='ridge',font='times 13 bold',fg='red', bg="white",borderwidth=0,highlightthickness = 0, height=1, width=75, anchor=CENTER).place(x=0,y=635)
 		self.root.resizable(0,0)
 		self.root.geometry('675x675')
+		self.root.protocol("WM_DELETE_WINDOW", self.onExit)
 		self.root.mainloop()
 		return (self.user_score,self.comp_score)

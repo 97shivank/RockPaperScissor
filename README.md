@@ -31,7 +31,7 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
 
 6. Now To See Your Scorecard, Click On Scoreboard Button Below Submit Button.
   <br>
-  <img src="./screenshots/database_screen.JPG">
+  <img src="./screenshots/database.png">
   <br>
 
 HOPE YOU WILL ENJOY PLAYING IT….IF ANY ISSUES refer documentation.
