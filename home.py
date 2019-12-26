@@ -12,7 +12,7 @@ class rockPaperScissors:
 		self.cur=self.con.cursor()
 		self.root=Tk()
 		self.title = Label(self.root,text='Rock Paper Scissor',relief='ridge',font='times 30 bold',fg='midnight blue', bg="white",borderwidth=0,highlightthickness = 0)
-		self.logo = PhotoImage(file='icons/logo.gif')
+		self.logo = PhotoImage(file='icons/logo.png')
 		self.logo_image = Label(self.root,image=self.logo, bg="white")
 		self.versionLabel = Label(self.root,text='( Ver 1.0 )',font='times 9 italic',bg='white', fg="VioletRed1")
 		self.nameLabel = Label(self.root,text='Enter Your Name Please :',font='times 10 bold',bg='white', fg="VioletRed3")
@@ -27,8 +27,7 @@ class rockPaperScissors:
 		self.con.commit()
 		self.wipe()
 		gameObject = playGame(userName, self.con, self.root)
-		temp_scores= gameObject.myGame()
-		return temp_scores
+		temp_scores= gameObject.myGame(self.game)
 
 	def fun(self):
 		if self.nameEntry.get()=='':
@@ -37,13 +36,14 @@ class rockPaperScissors:
 			temp_scores = self.play(self.nameEntry.get())
 
 	def score(self):
-		db = showDatabase(self.con)
+		db = showDatabase(self.con,self.root)
+		self.wipe()
 		db.score()
 		self.con.commit()
 
 	def createHomeWinodw(self):
 		self.title.place(x=30,y=180)
-		self.logo_image.place(x=120,y=10)
+		self.logo_image.place(x=250,y=10)
 		self.versionLabel.place(x=200,y=230, anchor=CENTER)
 		self.nameLabel.place(x=80,y=270, anchor=CENTER)
 		self.nameEntry.place(x=5,y=280, height=25)
