@@ -5,8 +5,8 @@ from updateScore import scoring
 
 class playGame:
 
-	def __init__(self, userName, conn):
-		self.root = Toplevel()
+	def __init__(self, userName, conn, root):
+		self.root = root
 		self.user_name = userName
 		self.scoreboard = scoring(conn)
 		self.user_score, self.comp_score = self.scoreboard.getScore(userName)
@@ -19,7 +19,7 @@ class playGame:
 		self.outputScissors = PhotoImage(file='icons/outputScissors.png')
 		self.user = PhotoImage(file='icons/user.png')
 		self.computer = PhotoImage(file='icons/computer.png')
-	
+
 	def onExit(self):
 		self.scoreboard.insertData(self.user_name,self.user_score, self.comp_score)
 		self.root.destroy()
