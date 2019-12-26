@@ -34,12 +34,12 @@ class showDatabase:
 			else:
 				color = "PaleTurquoise1"
 			if i < len(rows):
-				name,yscore,cscore = rows[i-1][0],rows[i-1][1],row[i-1][2]
+				name,yscore,cscore = rows[i-1][0],rows[i-1][1],rows[i-1][2]
 			else:
 				name,yscore,cscore = "Empty", "", ""
-			Label(self.root,text= str(name).center(20),borderwidth=1,bg=color,fg='black',font='Arial 20 bold').grid(row=i,column=1, sticky='ew')
-			Label(self.root,text=str(yscore).center(20),borderwidth=1,bg=color,fg='black',font='Arial 20 bold').grid(row=i,column=2, sticky='ew')
-			Label(self.root,text= str(cscore).center(20),borderwidth=1,bg=color,fg='black',font='Arial 20 bold').grid(row=i,column=3, sticky='ew')
+			Label(self.root,text= str(name).center(20),borderwidth=1,bg=color,fg='black',font='Arial 15').grid(row=i,column=1, sticky='ew')
+			Label(self.root,text=str(yscore).center(20),borderwidth=1,bg=color,fg='black',font='Arial 15').grid(row=i,column=2, sticky='ew')
+			Label(self.root,text= str(cscore).center(20),borderwidth=1,bg=color,fg='black',font='Arial 15').grid(row=i,column=3, sticky='ew')
 		
 		Button(self.root, text="Reset", bg="khaki1", fg="brown", command=self.delete).grid(row=19,column=2)
 		self.root.update()

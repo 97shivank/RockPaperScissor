@@ -10,7 +10,7 @@ class playGame:
 		self.user_name = userName
 		self.scoreboard = scoring(conn)
 		self.user_score, self.comp_score = self.scoreboard.getScore(userName)
-		self.logo=PhotoImage(file='icons/logo.gif')
+		self.logo=PhotoImage(file='icons/logo.png')
 		self.iconRock = PhotoImage(file='icons/iconRock.png')
 		self.iconPaper = PhotoImage(file='icons/iconPaper.png')
 		self.iconScissors = PhotoImage(file='icons/iconScissors.png')
