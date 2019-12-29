@@ -36,7 +36,7 @@ class rockPaperScissors:
 			temp_scores = self.play(self.nameEntry.get())
 
 	def score(self):
-		db = showDatabase(self.con,self.root)
+		db = showDatabase(self.con,self.root, self.game)
 		self.wipe()
 		db.score()
 		self.con.commit()
