@@ -10,7 +10,8 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
 ## STEPS TO PLAY:
 
 
-1. For Window Users : 
+1. Steps to plays game :
+  For Window Users : 
    Right Click On RockPaperScissors.py And Click Edit With Idle.
   <br>
   <img src="./screenshots/ss1.jpg">
@@ -19,7 +20,7 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
   For Linux Users :
   Open the RockPaperScissors file by pressing enter on it and game will be up for you.
   <br>
-  <img src="./screenshots/linuxUsage.jpg">
+  <img src="./screenshots/linuxUsage.png">
   <br>
   
 
