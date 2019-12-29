@@ -32,7 +32,7 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
   <img src="./screenshots/game_screen.png">
   <br>
 
-5. I’ve Pressed Paper, so The Result Is Shown Below in the same screen with Scores.
+5. I’ve Pressed Rock, so The Result Is Shown Below in the same screen with Scores.
 
 6. Now To See Your Scorecard, Click On Scoreboard Button Below Submit Button on Home Screen.
   <br>
