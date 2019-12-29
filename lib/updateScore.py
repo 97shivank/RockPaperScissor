@@ -11,16 +11,13 @@ class scoring():
 		try:
 			self.cur.execute("Select yscore,cscore from rps where name = '%s'"%(Name))
 			score = self.cur.fetchall()
-			return(score[0][0], score[0][1])
+			return(int(score[0][0]), int(score[0][1]))
 		except Exception as e:
 			self.cur.execute("insert into rps (name, yscore,cscore) values (?,?,?)",(Name,0,0,))
 			self.con.commit()
 			return (0,0)
 
 	def insertData(self,Name,yscore,cscore):
-		try:
-			self.cur.execute("Update rps set yscore = ? , cscore = ?  where name = ?",(yscore,cscore,Name))
-		except Exception as e:
-			print(e)
-			self.cur.execute("insert into rps (name, yscore, cscore) values (?,?,?)",(Name,yscore,cscore,))
+		self.cur.execute("delete from rps where name = ?", (Name,))
+		self.cur.execute("insert into rps (name, yscore, cscore) values (?,?,?)",(Name,yscore,cscore,))
 		self.con.commit()

@@ -3,12 +3,14 @@ from tkinter import messagebox
 import random
 import sqlite3
 import os
+import sys
+sys.path.append('./lib/')
 from database import showDatabase
 from game import playGame
 
 class rockPaperScissors:
 	def __init__(self):
-		self.con=sqlite3.Connection('Shivank.db')
+		self.con=sqlite3.Connection('scoreboard.db')
 		self.cur=self.con.cursor()
 		self.root=Tk()
 		self.title = Label(self.root,text='Rock Paper Scissor',relief='ridge',font='times 40 bold',fg='midnight blue', bg="white",borderwidth=0,highlightthickness = 0)
@@ -20,7 +22,6 @@ class rockPaperScissors:
 		self.submitButton = None
 		self.openSourceLabel = None
 		self.scoreboardButton = None
-
 
 	def play(self,userName):
 		self.cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5),cscore varchar2(5))")
@@ -36,7 +37,7 @@ class rockPaperScissors:
 			temp_scores = self.play(self.nameEntry.get())
 
 	def score(self):
-		db = showDatabase(self.con,self.root)
+		db = showDatabase(self.con,self.root, self.game)
 		self.wipe()
 		db.score()
 		self.con.commit()
