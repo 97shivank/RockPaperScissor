@@ -65,7 +65,6 @@ class showDatabase:
 	def delete(self, home):
 		self.cur.execute("drop table rps")
 		self.con.commit()
-		self.__init__(self.con, self.root,home)
 		self.score()
 
 	def deleteWindow(self, home):
