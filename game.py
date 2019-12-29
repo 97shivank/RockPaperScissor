@@ -192,6 +192,7 @@ class playGame:
 
 	def onBackToHome(self, game):
 		self.scoreboard.insertData(self.user_name,self.user_score, self.comp_score)
+		# print(self.user_name,self.user_score, self.comp_score)
 		self.destroyWindow()
 		self.root.update()
 		game()

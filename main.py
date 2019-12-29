@@ -21,7 +21,6 @@ class rockPaperScissors:
 		self.openSourceLabel = None
 		self.scoreboardButton = None
 
-
 	def play(self,userName):
 		self.cur.execute("create table if not exists rps(name varchar2(10),yscore varchar2(5),cscore varchar2(5))")
 		self.con.commit()
