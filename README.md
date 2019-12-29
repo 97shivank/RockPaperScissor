@@ -10,10 +10,18 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
 ## STEPS TO PLAY:
 
 
-1. Right Click On Main.py And Click Edit With Idle.
+1. For Window Users : 
+   Right Click On RockPaperScissors.py And Click Edit With Idle.
   <br>
   <img src="./screenshots/ss1.jpg">
   <br>
+  
+  For Linux Users :
+  Open the RockPaperScissors file by pressing enter on it and game will be up for you.
+  <br>
+  <img src="./screenshots/linuxUsage.jpg">
+  <br>
+  
 
 2. Press F5 And Sit 
 
@@ -45,7 +53,7 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
 HOPE YOU WILL ENJOY PLAYING IT….IF ANY ISSUES refer documentation.
 
 ## REQUIREMENTS :
-
+### For Windows
 1. `Install Python 2.7`
 2. `apt-get install python-tk` 
 
