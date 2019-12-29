@@ -3,12 +3,14 @@ from tkinter import messagebox
 import random
 import sqlite3
 import os
+import sys
+sys.path.append('./lib/')
 from database import showDatabase
 from game import playGame
 
 class rockPaperScissors:
 	def __init__(self):
-		self.con=sqlite3.Connection('Shivank.db')
+		self.con=sqlite3.Connection('scoreboard.db')
 		self.cur=self.con.cursor()
 		self.root=Tk()
 		self.title = Label(self.root,text='Rock Paper Scissor',relief='ridge',font='times 40 bold',fg='midnight blue', bg="white",borderwidth=0,highlightthickness = 0)
