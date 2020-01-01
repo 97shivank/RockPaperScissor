@@ -11,27 +11,29 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
 
 
 1. Steps to plays game :
-  For Window Users : 
+  For Window Users :
    Right Click On RockPaperScissors.py And Click Edit With Idle.
   <br>
   <img src="./screenshots/ss1.jpg">
   <br>
-  
+
   For Linux Users :
+  Run 'bash install.sh' file to install application in application launcher.
+  or To try it directly
   Open the RockPaperScissors file by pressing enter on it and game will be up for you.
   <br>
   <img src="./screenshots/linuxUsage.png">
   <br>
-  
 
-2. Press F5 And Sit 
+
+2. Press F5 And Sit
 
 3. Now Main Window Of The Game Will Open. Enter Your Name In Given Box And Press Submit. This Window Will Show Your Given Name Entered.
   <br>
   <img src="./screenshots/Opening screen.png">
   <br>
 
-4. Now After Hitting Submit You Will Get This Window. 
+4. Now After Hitting Submit You Will Get This Window.
   <br>
   <img src="./screenshots/game.png">
   <br>
@@ -56,7 +58,7 @@ HOPE YOU WILL ENJOY PLAYING IT….IF ANY ISSUES refer documentation.
 ## REQUIREMENTS :
 ### For Windows
 1. `Install Python 2.7`
-2. `apt-get install python-tk` 
+2. `apt-get install python-tk`
 
 #### Steps to setup :
 
