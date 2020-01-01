@@ -20,7 +20,7 @@ Paper–scissors-rock (also known as scissors-rock-paper or other variants) is a
   For Linux Users :
   Run 'bash install.sh' file to install application in application launcher.
   or To try it directly
-  Open the RockPaperScissors file by pressing enter on it and game will be up for you.
+  Open the RockPaperScissorsLinux file by pressing enter on it and game will be up for you.
   <br>
   <img src="./screenshots/linuxUsage.png">
   <br>
